@@ -6,6 +6,8 @@ class Food(models.Model):
   address = models.CharField(max_length=100)
   description = models.CharField(max_length=500)
   photo_url = models.CharField(max_length=200, null=True)
+  lon = models.CharField(max_length=20, default='lon')
+  lat = models.CharField(max_length=20, default='lat')
 
 class Drink(models.Model):
   name = models.CharField(max_length=100)
@@ -13,3 +15,5 @@ class Drink(models.Model):
   address = models.CharField(max_length=100)
   description = models.CharField(max_length=500)
   photo_url = models.CharField(max_length=200, null=True)
+  lon = models.CharField(max_length=20, default='lon')
+  lat = models.CharField(max_length=20, default='lat')

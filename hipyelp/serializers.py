@@ -6,12 +6,12 @@ from rest_framework import serializers
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Food
-    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url']
+    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat']
 
 
 # DrinkSerializer
 class DrinkSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Drink
-    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url']
+    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat']
 
