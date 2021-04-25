@@ -33,4 +33,4 @@ class DrinkTag(models.Model):
     related_name='drinkTags',
     related_query_name=' drinktag',
   )
-  drinktagName = models.TextField()
+  tagName = models.TextField()

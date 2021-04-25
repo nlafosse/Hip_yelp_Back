@@ -15,17 +15,16 @@ class FoodTagsSerializer(serializers.HyperlinkedModelSerializer):
     model = FoodTag
     fields = ('tagname')
 
-
 # DrinkSerializer
 class DrinkSerializer(serializers.HyperlinkedModelSerializer):
-  drinkTags = serializers.SlugRelatedField(many=True, slug_field='drinktagname', queryset=DrinkTag.objects.all())
+  drinkTags = serializers.SlugRelatedField(many=True, slug_field='tagname', queryset=DrinkTag.objects.all())
   class Meta:
-    model = DrinkTag
+    model = Drink
     fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat', 'drinkTags']
 
 # DrinkTagsSerializer
 class DrinkTagsSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = DrinkTag
-    fields = ('drinktagname')
+    fields = ('tagname')
 
