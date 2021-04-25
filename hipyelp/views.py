@@ -5,12 +5,12 @@ from .serializers import FoodSerializer, DrinkSerializer
 
 # FoodViewSet
 class FoodViewSet(viewsets.ModelViewSet):
-  queryset = Food.objects.all()
+  queryset = Food.objects.filter()
   serializer_class = FoodSerializer
   permission_classes = [permissions.AllowAny]
 
 # DrinkViewSet
 class DrinkViewSet(viewsets.ModelViewSet):
-  queryset = Drink.objects.all()
+  queryset = Drink.objects.filter()
   serializer_class = DrinkSerializer
   permission_classes = [permissions.AllowAny]
