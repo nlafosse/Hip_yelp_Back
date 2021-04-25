@@ -19,10 +19,18 @@ class Drink(models.Model):
   lon = models.CharField(max_length=20, default='lon')
   lat = models.CharField(max_length=20, default='lat')
 
-class HotSpotTag(models.Model):
+class FoodTag(models.Model):
   foodName = models.ManyToManyField(
     Food,
-    related_name='tags',
-    related_query_name='tag',
+    related_name='foodTags',
+    related_query_name='foodtag',
   )
   tagName = models.TextField()
+
+class DrinkTag(models.Model):
+  drinkName = models.ManyToManyField(
+    Drink,
+    related_name='drinkTags',
+    related_query_name=' drinktag',
+  )
+  drinktagName = models.TextField()

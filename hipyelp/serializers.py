@@ -1,25 +1,31 @@
-from .models import Food, Drink, HotSpotTag
+from .models import Food, Drink, FoodTag, DrinkTag
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
 # FoodSerializer
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
-  tags = serializers.SlugRelatedField(many=True, slug_field='tagname', queryset=HotSpotTag.objects.all())
+  foodTags = serializers.SlugRelatedField(many=True, slug_field='tagname', queryset=FoodTag.objects.all())
   class Meta:
     model = Food
-    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat', 'tags']
+    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat', 'foodTags']
 
-# HotSpotTagSerializer
-class TagsSerializer(serializers.HyperlinkedModelSerializer):
-  class Metal:
-    model = HotSpotTag
+# FoodTagSerializer
+class FoodTagsSerializer(serializers.HyperlinkedModelSerializer):
+  class Meta:
+    model = FoodTag
     fields = ('tagname')
 
 
 # DrinkSerializer
 class DrinkSerializer(serializers.HyperlinkedModelSerializer):
-  tags = serializers.SlugRelatedField(many=True, slug_field='tagname', queryset=HotSpotTag.objects.all())
+  drinkTags = serializers.SlugRelatedField(many=True, slug_field='drinktagname', queryset=DrinkTag.objects.all())
   class Meta:
-    model = Drink
-    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat', 'tags']
+    model = DrinkTag
+    fields = ['id', 'name', 'group', 'address', 'description', 'photo_url', 'lon', 'lat', 'drinkTags']
+
+# DrinkTagsSerializer
+class DrinkTagsSerializer(serializers.HyperlinkedModelSerializer):
+  class Meta:
+    model = DrinkTag
+    fields = ('drinktagname')
 
