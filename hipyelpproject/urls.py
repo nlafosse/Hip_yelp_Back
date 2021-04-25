@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from hipyelp.views import FoodViewSet, DrinkViewSet
+from hipyelp.views import FoodViewSet
 
 # Set that router
 router = routers.DefaultRouter()
 # register our viewsets
 router.register(r'foods', FoodViewSet)
-router.register(r'drinks', DrinkViewSet)
+# router.register(r'drinks', DrinkViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
