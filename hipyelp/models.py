@@ -8,7 +8,7 @@ class Food(models.Model):
   photo_url = models.CharField(max_length=200, null=True)
   lon = models.CharField(max_length=20, default='lon')
   lat = models.CharField(max_length=20, default='lat')
-  tags = models.CharField(max_length=100, default='tags')
+
 
 class Drink(models.Model):
   name = models.CharField(max_length=100)
@@ -18,4 +18,19 @@ class Drink(models.Model):
   photo_url = models.CharField(max_length=200, null=True)
   lon = models.CharField(max_length=20, default='lon')
   lat = models.CharField(max_length=20, default='lat')
-  tags = models.CharField(max_length=100, default='tags')
+
+class FoodTag(models.Model):
+  foodName = models.ManyToManyField(
+    Food,
+    related_name='foodTags',
+    related_query_name='foodtag',
+  )
+  tagName = models.TextField()
+
+class DrinkTag(models.Model):
+  drinkName = models.ManyToManyField(
+    Drink,
+    related_name='drinkTags',
+    related_query_name=' drinktag',
+  )
+  tagName = models.TextField()
