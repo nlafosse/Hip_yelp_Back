@@ -16,11 +16,11 @@ class FoodSerializer(serializers.ModelSerializer):
     fields = '__all__'
 
   def create(self, validated_data):
-    tag_data = validated_data.pop('foodTags')
+    foodTags_data = validated_data.pop('foodTags')
     food = Food.objects.create(**validated_data)
-    for tag_data in tag_data:
-      FoodTag.objects.create(foodtag=foodtag, **tag_data)
-      FoodTag.objects.create(food=food, **tag_data)
+    for foodTags_data in foodTags_data:
+      FoodTag.objects.create(foodtags=foodtags, **foodTags_data)
+      FoodTag.objects.create(food=food, **foodTags_data)
     return food
 
 
@@ -38,10 +38,10 @@ class DrinkSerializer(serializers.ModelSerializer):
     fields = '__all__'
 
   def create(self, validated_data):
-    tag_data = validated_data.pop('drinkTags')
+    drinkTags_data = validated_data.pop('drinkTags')
     drink = Drink.objects.create(**validated_data)
-    for tag_data in tag_data:
-      DrinkTag.objects.create(drinktag=drinktag, **tag_data)
-      DrinkTag.objects.create(drink=drink, **tag_data)
-    return Drink
+    for drinkTags_data in drinkTags_data:
+      DrinkTag.objects.create(drinktags=drinktags, **drinkTags_data)
+      DrinkTag.objects.create(drink=drink, **drinkTags_data)
+    return drink
 

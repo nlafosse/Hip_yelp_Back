@@ -23,8 +23,6 @@ router = routers.DefaultRouter()
 # register our viewsets
 router.register(r'foods', FoodViewSet)
 router.register(r'drinks', DrinkViewSet)
-router.register(r'foods/<id>', FoodTagsViewSet)
-router.register(r'drinks/<id>', DrinkTagsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
