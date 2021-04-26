@@ -37,4 +37,11 @@ class DrinkSerializer(serializers.ModelSerializer):
     model = Drink
     fields = '__all__'
 
+  def create(self, validated_data):
+    tag_data = validated_data.pop('drinkTags')
+    drink = Drink.objects.create(**validated_data)
+    for tag_data in tag_data:
+      DrinkTag.objects.create(drinktag=drinktag, **tag_data)
+      DrinkTag.objects.create(drink=drink, **tag_data)
+    return Drink
 
