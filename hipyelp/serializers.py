@@ -1,4 +1,4 @@
-from .models import Food, Drink, FoodTag, DrinkTag
+from .models import *
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -10,16 +10,18 @@ class FoodTagsSerializer(serializers.ModelSerializer):
 
 # FoodSerializer
 class FoodSerializer(serializers.ModelSerializer):
-  def create(self, validated_data):
-    tag_data = validated_data.pop('tags')
-    foodtag = FoodTag.objects.create(**validated_data)
-    for tag_data in tag_data:
-      Food.objects.create(foodtag=foodtag, **tag_data)
-      
   foodTags = FoodTagsSerializer(many=True)
   class Meta:
     model = Food
     fields = '__all__'
+
+  def create(self, validated_data):
+    tag_data = validated_data.pop('foodTags')
+    food = Food.objects.create(**validated_data)
+    for tag_data in tag_data:
+      FoodTag.objects.create(foodtag=foodtag, **tag_data)
+      FoodTag.objects.create(food=food, **tag_data)
+    return food
 
 
 # DrinkTagsSerializer
