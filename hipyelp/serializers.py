@@ -10,6 +10,12 @@ class FoodTagsSerializer(serializers.ModelSerializer):
 
 # FoodSerializer
 class FoodSerializer(serializers.ModelSerializer):
+  def create(self, validated_data):
+    tag_data = validated_data.pop('tags')
+    foodtag = FoodTag.objects.create(**validated_data)
+    for tag_data in tag_data:
+      Food.objects.create(foodtag=foodtag, **tag_data)
+      
   foodTags = FoodTagsSerializer(many=True)
   class Meta:
     model = Food
