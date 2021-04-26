@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 class Food(models.Model):
   name = models.CharField(max_length=100)
@@ -8,6 +9,7 @@ class Food(models.Model):
   photo_url = models.CharField(max_length=200)
   lat = models.CharField(max_length=20)
   lon = models.CharField(max_length=20)
+  tags = tags = ArrayField(models.CharField(max_length=100), null=True, blank=True)
 
 class Drink(models.Model):
   name = models.CharField(max_length=100)
@@ -17,19 +19,4 @@ class Drink(models.Model):
   photo_url = models.CharField(max_length=200)
   lat = models.CharField(max_length=20)
   lon = models.CharField(max_length=20)
-
-class FoodTag(models.Model):
-  foodName = models.ManyToManyField(
-    Food,
-    related_name='foodTags',
-    related_query_name='foodtag',
-  )
-  tags = models.CharField(max_length=20)
-
-class DrinkTag(models.Model):
-  drinkName = models.ManyToManyField(
-    Drink,
-    related_name='drinkTags',
-    related_query_name=' drinktag',
-  )
-  tags = models.CharField(max_length=20)
+  tags = ArrayField(models.CharField(max_length=100), null=True, blank=True)

@@ -1,0 +1,3 @@
+CREATE DATABASE hipyelp;
+CREATE USER hipyelpuser WITH PASSWORD 'hipyelp';
+GRANT ALL PRIVILEGES ON DATABASE tunr TO hipyelpuser;
