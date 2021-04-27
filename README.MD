@@ -41,6 +41,7 @@ setted up in OSX and Linux
 
 ## Apps
 App we installs are `django_heroku` and `rest_framework`
+
 <img width="300" alt="Screen Shot 2021-04-27 at 12 56 04 AM" src="https://user-images.githubusercontent.com/79564250/116187341-5a77da80-a6f3-11eb-82f9-e636cc46895d.png">
 
 
