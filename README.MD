@@ -6,7 +6,15 @@
 
 [SetupandInstallation](#setupandinstallation) 
 
+[FoodList](#foodlist)  
+
+[DrinkList](#drinklist)  
+
 [Support](#support)  
+
+[Apps](#apps)  
+
+[Frameworks](#frameworks)
 
 [Troubleshooting](#troubleshooting) 
 
@@ -18,21 +26,36 @@
 
 [Status](#status) 
 
-## Hippy
-This is site for hippy.
 
 ## Description
-Using this site, hippies can find food, bar and night life near them. Then after their visit, rate them accordingly.
+This is backend of the original project of Yelp. Here you'll find information about how the backend was use to create this Yelp website.
 
 ## SetupandInstallation 
 setted up in OSX and Linux
 
-pip install python3
 pip install django 
+pip install djangorestframework
 pip install psycopg2-binary 
 django-admin startproject
 
-## Usage
+## Apps
+<img width="233" alt="Screen Shot 2021-04-26 at 11 34 37 PM" src="https://user-images.githubusercontent.com/79564250/116181074-f865a800-a6e7-11eb-9c02-b502bf2e6f13.png">
+
+
+## FoodsList!
+<img width="864" alt="Screen Shot 2021-04-26 at 11 38 49 PM" src="https://user-images.githubusercontent.com/79564250/116181406-8fcafb00-a6e8-11eb-8f5c-f48b7ca04abc.png">
+
+## Drinklist
+<img width="1208" alt="Screen Shot 2021-04-26 at 11 40 32 PM" src="https://user-images.githubusercontent.com/79564250/116181553-cc96f200-a6e8-11eb-8f29-2c25ef6b9bf2.png">
+
+
+
+## frameworks
+Django REST framework 
+Serializations
+Views
+Models
+
 ## Support
 please visit https://docs.djangoproject.com/en/3.2/
 
@@ -47,6 +70,7 @@ Change this line: local all postgres peer to: local all postgres md5 Restart Pos
 restart Now rerun the original command
 
 ## Futuregoal
+can be added more lists 
 
 ## Contribution
 Pull requests are welcome.
