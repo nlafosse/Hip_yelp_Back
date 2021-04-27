@@ -1,4 +1,4 @@
-<img width="300" alt="Screen Shot 2021-04-27 at 12 56 04 AM" src="https://user-images.githubusercontent.com/79564250/116187341-5a77da80-a6f3-11eb-82f9-e636cc46895d.png">
+
 ## Table of content
 
 [Header](#Hippy)  
@@ -40,7 +40,8 @@ setted up in OSX and Linux
 `django-admin startproject`
 
 ## Apps
-<img width="233" alt="Screen Shot 2021-04-26 at 11 34 37 PM" src="https://user-images.githubusercontent.com/79564250/116181074-f865a800-a6e7-11eb-9c02-b502bf2e6f13.png">
+App we installs are `django_heroku` and `rest_framework`
+<img width="300" alt="Screen Shot 2021-04-27 at 12 56 04 AM" src="https://user-images.githubusercontent.com/79564250/116187341-5a77da80-a6f3-11eb-82f9-e636cc46895d.png">
 
 
 ## FoodsList!
