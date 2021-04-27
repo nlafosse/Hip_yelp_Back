@@ -34,9 +34,9 @@ This is backend of the original project of Yelp. Here you'll find information ab
 setted up in OSX and Linux
 
 `pip install django` 
-pip install djangorestframework
-pip install psycopg2-binary 
-django-admin startproject
+`pip install djangorestframework`
+`pip install psycopg2-binary` 
+`django-admin startproject`
 
 ## Apps
 <img width="233" alt="Screen Shot 2021-04-26 at 11 34 37 PM" src="https://user-images.githubusercontent.com/79564250/116181074-f865a800-a6e7-11eb-9c02-b502bf2e6f13.png">
@@ -64,6 +64,7 @@ please visit https://docs.djangoproject.com/en/3.2/
 
 ## Troubleshooting
 Error: psql: FATAL: role “postgres” does not exist 
+<br />
 Solution: Check out this https://stackoverflow.com/questions/15301826/psql-fatal-role-postgres-does-not-exist.
 
 Error: psql: error: FATAL: Peer authentication failed for user "postgres" 
