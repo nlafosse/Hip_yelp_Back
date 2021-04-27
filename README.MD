@@ -33,7 +33,7 @@ This is backend of the original project of Yelp. Here you'll find information ab
 ## SetupandInstallation 
 setted up in OSX and Linux
 
-pip install django 
+`pip install django` 
 pip install djangorestframework
 pip install psycopg2-binary 
 django-admin startproject
@@ -51,13 +51,13 @@ django-admin startproject
 
 
 ## frameworks
-Django REST framework 
+`Django REST framework` 
 
-Serializations
+`Serializations`
 
-Views
+`Views`
 
-Models
+`Models`
 
 ## Support
 please visit https://docs.djangoproject.com/en/3.2/
